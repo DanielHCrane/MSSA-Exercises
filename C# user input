@@ -1,0 +1,50 @@
+using System;
+
+namespace _22_JAN_Exercises
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("1) Option 1");
+            Console.WriteLine("2) Option 2");
+            Console.WriteLine("3) Option 3");
+            Console.WriteLine("4) Option 4");
+
+            int userInputInteger = 0;
+
+            for (bool validInput = false; !validInput;)
+            { 
+                Console.WriteLine("Type an integer: ");
+
+                var input = Console.ReadLine();
+                validInput = int.TryParse(input, out userInputInteger);
+
+                validInput = validInput && userInputInteger >= 1
+                                        && userInputInteger <= 4;
+              
+            }
+
+            switch(userInputInteger)
+            {
+                case 1:
+                    Console.WriteLine("You chose 1!");
+                    break;
+                case 2:
+                    Console.WriteLine("You chose 2!");
+                    break;
+                case 3:
+                    Console.WriteLine("You chose 3!");
+                    break;
+                case 4:
+                    Console.WriteLine("You chose 4!");
+                    break;
+                default:
+               
+                    Console.WriteLine("This should never happen. Contact your IT manager.");
+                    break;
+
+            }
+        }
+    }
+}
